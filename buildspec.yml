@@ -1,0 +1,15 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - chmod +x ./gradlew
+      - ./gradlew assembleDebug
+      - echo "List all\n"
+      - ls -alR
+      - echo "List output\n"
+      - ls -alR | grep output
+artifacts:
+  files:
+    #- "./android/app/build/outputs/**/*.apk"
+    - "./app/build/outputs/**/*.apk"
+  discard-paths: yes
